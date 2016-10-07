@@ -1,0 +1,47 @@
+.tixPaymentBox {
+  width: 450px;
+  display: flex;
+  height: 50px;
+  border: 1px solid #E7E7E7;
+  margin: 15px 5px;
+  &:hover {
+    background-color: #F7F7F7;
+  }
+
+  .tixPaymentBox__sideMarker {
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    div {
+      display: block !important;
+      line-height: normal !important;
+    }
+
+    label {
+      display: inline !important;
+      margin-right: 0 !important;
+      padding-left: 14px;
+    }
+  }
+
+  .tixPaymentBox__main {
+    padding: 1px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+
+    h1 {
+      font-family: "proxima-nova","Open Sans","Arial","Helvetica",sans-serif;
+      font-size: 16px;
+      padding-bottom: 3px;
+    }
+
+    span {
+      font-size: 13px;
+    }
+  }
+}
+

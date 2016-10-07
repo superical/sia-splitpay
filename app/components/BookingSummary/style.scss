@@ -1,0 +1,22 @@
+.bookingSummaryContainer {
+  position: relative;
+  top: -113px;
+}
+
+.bookingTooltip__enter {
+  opacity: 0;
+}
+
+.bookingTooltip__enter.bookingTooltip__enter__active {
+  opacity: 1;
+  transition: opacity .5s ease-in;
+}
+
+.bookingTooltip__leave {
+  opacity: 1;
+}
+
+.bookingTooltip__leave.bookingTooltip__leave__active {
+  opacity: 0;
+  transition: opacity .5s ease-in;
+}

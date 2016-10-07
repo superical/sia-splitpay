@@ -1,0 +1,10 @@
+.bookingToolTip {
+  position: absolute !important;
+  right: 255px;
+}
+
+@media screen and (max-width: 987px) {
+  .bookingToolTip {
+    right: 10px;
+  }
+}

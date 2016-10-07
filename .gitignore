@@ -1,0 +1,7 @@
+.DS_Store
+typings
+logs
+*.log
+.idea
+node_modules
+
