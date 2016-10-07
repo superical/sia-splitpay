@@ -1,5 +1,4 @@
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
 import * as axios from 'axios';
 import {PassengerTicketBox} from "../../components/PaasengerTicketBox/index";
 
@@ -19,7 +18,7 @@ export class SplitPayment extends React.Component<IProps, IState> {
         super(props);
         this.state = {
             bookingData: {
-                passengers: [
+                passengers: [   //Todo: Remove this dummy data once API can handle passenger IDs
                     {
                         "id": 1001,
                         "name": "John Smith",
@@ -50,7 +49,7 @@ export class SplitPayment extends React.Component<IProps, IState> {
             }
         })
             .then(response => {
-                //this.setState({bookingData: response.data});
+                //this.setState({bookingData: response.data});      //Todo: Uncomment this line when API is ready
             })
             .catch(function (error) {
                 console.log(error);
@@ -58,7 +57,8 @@ export class SplitPayment extends React.Component<IProps, IState> {
     }
 
     private onCompletePurchaseHandler() {
-        //Todo: Call API
+        //Todo: Call API here to update booking - paying status
+        //...
         const {passengers} = this.state.bookingData;
         this.setState({
             bookingData: Object.assign({}, this.state.bookingData, {passengers: passengers.map(p => {
