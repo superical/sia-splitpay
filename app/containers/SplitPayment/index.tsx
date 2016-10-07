@@ -84,6 +84,8 @@ export class SplitPayment extends React.Component<IProps, IState> {
 
         const me = passengers.filter(p => p.id == params.passengerId);
 
+        const haveIpaid = () => me && me[0] && me[0].paid;
+
         return (
             <div>
                 <div className="main-intro">
@@ -92,7 +94,11 @@ export class SplitPayment extends React.Component<IProps, IState> {
                 <div className="payments-detail block-2">
                     <div className="payments-group payments-group__charge">
                         <div className="payments-inner" style={{padding: '24px 20px 15px'}}>
-                            <p>Your ticket purchase is not done yet! Complete your payment by clicking on the Pay button. </p>
+                            {
+                                haveIpaid() ?
+                                    <p>You have completed your ticket purchase! Here's the payment status of the other passengers in your group.</p>
+                                    :  <p>Your ticket purchase is not done yet! Complete your payment by clicking on the Pay button. </p>
+                            }
                             <div className="grid-row">
                                 <div className="grid-col">
                                     <div className="grid-inner">
@@ -104,7 +110,7 @@ export class SplitPayment extends React.Component<IProps, IState> {
                                 <div className="grid-col">
                                     <div className="grid-inner">
                                         {
-                                            me && me[0] && !me[0].paid ?
+                                            !haveIpaid() ?
                                                 <div className="button-group-1">
                                                     <input name="_eventId" defaultValue="validatePaymentDetails" type="hidden"/>
                                                     <input id="make-payment" defaultValue="Complete your purchase"
